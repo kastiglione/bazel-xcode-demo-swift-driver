@@ -1,3 +1,32 @@
+# Bazel Xcode Demo
+
+This is a demo of [Bazel](https://bazel.build) and Xcode integration. This isn't an actual fork of [apple/swift-driver](https://github.com/apple/swift-driver).
+
+## Trying The Demo
+
+First, install Bazel and XcodeGen.
+
+* [Install Bazel](https://docs.bazel.build/versions/1.2.0/install-os-x.html)
+* [Install XcodeGen](https://github.com/yonaskolb/XcodeGen#installing)
+
+If you're using brew, a simple way to install is:
+
+```sh
+brew tap bazelbuild/tap
+brew install bazelbuild/tap XcodeGen
+```
+
+Once installed, generate and open the Xcode project by running:
+
+```sh
+make project
+open swift-driver.xcodeproj
+```
+
+For debugging to work, an lldb settings file is generated. In your `~/.lldbinit`, add this line:
+
+`command source ~/.lldbinit-source-map`
+
 # Swift Compiler Driver
 
 Swift's compiler driver is a program that coordinates the compilation of Swift source code into various compiled results: executables, libraries, object files, Swift modules and interfaces, etc. It is the program one invokes from the command line to build Swift code (i.e., `swift` or `swiftc`) and is often invoked on the developer's behalf by a build system such as the [Swift Package Manager (SwiftPM)](https://github.com/apple/swift-package-manager) or Xcode's build system.

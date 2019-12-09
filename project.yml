@@ -1,0 +1,58 @@
+name: swift-driver
+options:
+  createIntermediateGroups: true
+  defaultConfig: Debug
+  groupSortPosition: none
+  settingPresets: none
+settings:
+  CODE_SIGNING_ALLOWED: false
+  DONT_RUN_SWIFT_STDLIB_TOOL: true
+  LD: /usr/bin/true
+  LIBTOOL: /usr/bin/true
+  SDKROOT: macosx
+  SWIFT_EXEC: $SRCROOT/bazel/swiftc-stub.sh
+  SWIFT_OBJC_INTERFACE_HEADER_NAME: ""
+  SWIFT_VERSION: 5
+targets:
+  swift-driver:
+    type: tool
+    platform: macOS
+    settings:
+      PRODUCT_MODULE_NAME: swift_driver
+      PRODUCT_NAME: swiftc
+      BAZEL_PACKAGE: Sources/swift-driver
+    preBuildScripts:
+      - name: Build with bazel
+        script: |
+          PATH=${PATH} bazel build --config=$CONFIGURATION swift-driver
+          $SRCROOT/bazel/install.sh
+    sources:
+      - Sources/swift-driver/main.swift
+  SwiftDriver:
+    type: library.static
+    platform: macOS
+    sources:
+      - Sources/SwiftDriver
+  SwiftDriverTests:
+    type: bundle.unit-test
+    platform: macOS
+    settings:
+      PRODUCT_NAME: SwiftDriverTests
+      BAZEL_PACKAGE: Tests/SwiftDriverTests
+    preBuildScripts:
+      - name: Build with bazel
+        script: |
+          PATH=${PATH} bazel build --config=$CONFIGURATION SwiftDriverTests
+          $SRCROOT/bazel/install.sh
+    sources:
+      - Tests/SwiftDriverTests
+schemes:
+  swift-driver:
+    build:
+      parallelizeBuild: false
+      buildImplicitDependencies: false
+      targets:
+        swift-driver: [run]
+    test:
+      targets:
+        - SwiftDriverTests

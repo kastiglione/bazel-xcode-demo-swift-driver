@@ -1,0 +1,15 @@
+build \
+  --cxxopt=-std=c++14 \
+  --define=apple.experimental.tree_artifact_outputs=1 \
+  --features=swift.no_generated_header \
+  --features=swift.opt_uses_wmo \
+  --macos_minimum_os=10.13
+
+build:Debug \
+  --compilation_mode=dbg \
+  --features=debug_prefix_map_pwd_is_dot \
+  --features=swift.index_while_building \
+  --features=swift.use_global_module_cache \
+  --spawn_strategy=local \
+  --strategy=SwiftCompile=worker \
+  --swiftcopt=-index-ignore-system-modules
