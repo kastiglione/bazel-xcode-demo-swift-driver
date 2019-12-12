@@ -32,6 +32,8 @@ After calling `bazel build`, there is a series of post-build steps that take pla
 3. Import indexes to `DerivedData`
 4. Generate an `lldb` settings file
 
+Importing Bazel built indexes into Xcode is done using [`lyft/index-import`](https://github.com/lyft/index-import).
+
 These steps all make use of the environment variables Xcode provides. See Xcode's [Build Setting Reference](https://developer.apple.com/library/archive/documentation/DeveloperTools/Reference/XcodeBuildSettingRef/1-Build_Setting_Reference/build_setting_ref.html).
 
 ## Extras
