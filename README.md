@@ -2,6 +2,8 @@
 
 This is a demo of [Bazel](https://bazel.build) and Xcode integration. This isn't an actual fork of [apple/swift-driver](https://github.com/apple/swift-driver).
 
+See [bazel/README.md](bazel/README.md) for technical details.
+
 ## Trying The Demo
 
 First, install Bazel and XcodeGen.
