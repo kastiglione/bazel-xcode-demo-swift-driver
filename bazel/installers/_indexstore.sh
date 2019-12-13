@@ -15,7 +15,7 @@ readonly bazel_bin="^(?:$bazel_root/)?bazel-out/.+?/bin"
 # Object file paths are fundamental to how Xcode loads from the indexstore. If
 # the `OutputFile` does not match what Xcode looks for, then those parts of the
 # indexstore will not be found and used.
-readonly bazel_object="$bazel_bin/.*/(.+?)_objs/.*/(.+?)[.]swift[.]o$"
+readonly bazel_object="$bazel_bin/.*/(.+?)(?:[.]library)?_objs/.*/(.+?)[.]swift[.]o$"
 readonly xcode_object="$CONFIGURATION_TEMP_DIR/\$1.build/Objects-normal/$ARCHS/\$2.o"
 
 # Bazel built `.swiftmodule` files are copied to `DerivedData`. Since modules
