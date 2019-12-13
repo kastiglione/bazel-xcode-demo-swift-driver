@@ -15,7 +15,8 @@ If you're using brew, a simple way to install is:
 
 ```sh
 brew tap bazelbuild/tap
-brew install bazelbuild/tap XcodeGen
+brew install bazelbuild/tap/bazel
+brew install XcodeGen
 ```
 
 Once installed, generate and open the Xcode project by running:
