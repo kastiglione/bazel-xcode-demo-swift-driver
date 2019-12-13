@@ -6,7 +6,8 @@ swift_library(
     srcs = glob(["**/*.swift"]),
     deps = [
         "@llbuild//:llbuildSwift",
-        "@swift_tools_support_core//:SwiftToolsSupport",
+        "@swift_tools_support_core//:TSCBasic",
+        "@swift_tools_support_core//:TSCUtility",
         "@yams//:Yams",
     ],
     visibility = ["//visibility:public"],

@@ -1,10 +1,4 @@
-load("@build_bazel_rules_swift//swift:swift.bzl", "swift_library", "swift_module_alias")
-
-swift_module_alias(
-    name = "SwiftToolsSupport",
-    deps = [":TSCBasic", ":TSCUtility"],
-    visibility = ["//visibility:public"],
-)
+load("@build_bazel_rules_swift//swift:swift.bzl", "swift_library")
 
 # Tools support core targets
 
@@ -26,6 +20,7 @@ swift_library(
     module_name = "TSCBasic",
     srcs = glob(["Sources/TSCBasic/**/*.swift"]),
     deps = [":TSCLibc"],
+    visibility = ["//visibility:public"],
 )
 
 swift_library(
@@ -33,4 +28,5 @@ swift_library(
     module_name = "TSCUtility",
     srcs = glob(["Sources/TSCUtility/**/*.swift"]),
     deps = [":TSCBasic"],
+    visibility = ["//visibility:public"],
 )
