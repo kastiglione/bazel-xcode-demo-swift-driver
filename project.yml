@@ -3,13 +3,11 @@ options:
   createIntermediateGroups: true
   defaultConfig: Debug
   groupSortPosition: none
-  settingPresets: none
 settings:
   CODE_SIGNING_ALLOWED: false
   DONT_RUN_SWIFT_STDLIB_TOOL: true
   LD: /usr/bin/true
   LIBTOOL: /usr/bin/true
-  SDKROOT: macosx
   SWIFT_EXEC: $SRCROOT/bazel/swiftc-stub.sh
   SWIFT_OBJC_INTERFACE_HEADER_NAME: ""
   SWIFT_VERSION: 5
