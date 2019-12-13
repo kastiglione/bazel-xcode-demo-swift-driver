@@ -24,6 +24,7 @@ targets:
     preBuildScripts:
       - name: Build with bazel
         script: |
+          set -e
           PATH=${PATH} bazel build --config=$CONFIGURATION swift-driver
           $SRCROOT/bazel/install.sh
     sources:
@@ -42,6 +43,7 @@ targets:
     preBuildScripts:
       - name: Build with bazel
         script: |
+          set -e
           PATH=${PATH} bazel build --config=$CONFIGURATION SwiftDriverTests
           $SRCROOT/bazel/install.sh
     sources:
