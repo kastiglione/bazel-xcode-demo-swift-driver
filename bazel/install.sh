@@ -16,4 +16,4 @@ export BAZEL_BIN=bazel-out/$config/bin
 # tl;dr: async needs both `>/dev/null 2>&1 &`
 "$SRCROOT"/bazel/installers/swiftmodules.sh >/dev/null 2>&1 &
 "$SRCROOT"/bazel/installers/indexstores.sh >/dev/null 2>&1 &
-"$SRCROOT"/bazel/installers/lldb.sh >/dev/null 2>&1 &
+"$SRCROOT"/bazel/installers/lldb-settings.sh >/dev/null 2>&1 &
